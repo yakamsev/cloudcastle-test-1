@@ -1,0 +1,528 @@
+/* Color palette */
+/* базовый блок 320х320 и текст в нём, прижатый к нижнему краю */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+/* Wrappers (see @media for changes)*/
+/* Big blocks no-resize */
+.bigblock_left {
+  display: block;
+  margin-right: 640px;
+  height: 640px;
+}
+.bigblock_right {
+  display: block;
+  margin-left: 640px;
+  height: 640px;
+}
+/* Wrapper 1 column 320 px */
+.wrapper_1_col {
+  display: block;
+  width: 320px;
+  height: 640px;
+  float: left;
+}
+.wrapper_1_col_right {
+  display: block;
+  width: 320px;
+  height: 640px;
+  float: right;
+}
+/* Wrapper 2 columns 640 px */
+.wrapper_2_col_right {
+  display: block;
+  width: 640px;
+  height: 640px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+.wrapper_2_col_left {
+  display: block;
+  width: 640px;
+  height: 640px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+/* Bigheaders */
+.bigheader {
+  display: block;
+  box-sizing: border-box;
+  height: 80px;
+}
+.bigheader a {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 480px;
+  height: 80px;
+  padding-top: 23px;
+  padding-right: 85px;
+  text-decoration: none;
+  font-family: 'helioslightc';
+  text-transform: uppercase;
+  font-size: 36px;
+  text-align: right;
+  color: #5c4c4c;
+  background: url('/images/icon.svg') center right 30px no-repeat;
+}
+/* About - top block about company */
+.about {
+  display: block;
+  position: relative;
+  height: 640px;
+  width: 100%;
+}
+.about__company {
+  background-color: #e3e4e8;
+  background: linear-gradient(#e4e5e7, #e3e4e8);
+  padding: 40px;
+  display: table;
+  text-align: center;
+  text-decoration: none;
+  height: 640px;
+  box-sizing: border-box;
+}
+.about__company p {
+  width: 100%;
+  font: 14px "Helvetica", sans-serif;
+  line-height: 1.2em;
+  display: table-cell;
+  vertical-align: bottom;
+  color: #1e1a33;
+  text-align: center;
+  text-decoration: none;
+  color: #483435;
+}
+.about__company p strong {
+  display: block;
+  font-family: 'heliosthincregular';
+  font-size: 36px;
+  line-height: 2em;
+  clear: both;
+  text-decoration: none;
+  color: #483435;
+}
+.about__development {
+  display: table;
+  width: 320px;
+  height: 320px;
+  padding: 40px;
+  box-sizing: border-box;
+  text-decoration: none;
+  background: white;
+}
+.about__development p {
+  width: 100%;
+  font: 14px "Helvetica", sans-serif;
+  line-height: 1.2em;
+  display: table-cell;
+  vertical-align: bottom;
+  color: #1e1a33;
+}
+.about__development p strong {
+  font-family: helioslightcregular, sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  line-height: 2em;
+  display: block;
+  color: #2e2e2e;
+  clear: both;
+}
+.about__design {
+  display: table;
+  width: 320px;
+  height: 320px;
+  padding: 40px;
+  box-sizing: border-box;
+  background-color: #8fccd0;
+  background-image: url('/images/design.png');
+  text-decoration: none;
+}
+.about__design p {
+  width: 100%;
+  font: 14px "Helvetica", sans-serif;
+  line-height: 1.2em;
+  display: table-cell;
+  vertical-align: bottom;
+  color: #1e1a33;
+}
+.about__design p strong {
+  font-family: helioslightcregular, sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  line-height: 2em;
+  display: block;
+  color: #2e2e2e;
+  clear: both;
+}
+.about__work {
+  display: table;
+  width: 320px;
+  height: 320px;
+  padding: 40px;
+  box-sizing: border-box;
+  text-decoration: none;
+  height: 640px;
+  background-color: #e3e4e8;
+  background: linear-gradient(#e4e5e7, #e3e4e8);
+}
+.about__work p {
+  width: 100%;
+  font: 14px "Helvetica", sans-serif;
+  line-height: 1.2em;
+  display: table-cell;
+  vertical-align: bottom;
+  color: #1e1a33;
+}
+.about__work p strong {
+  font-family: helioslightcregular, sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  line-height: 2em;
+  display: block;
+  color: #2e2e2e;
+  clear: both;
+}
+/* Meetings - big portraits with names */
+.meetings {
+  display: block;
+  position: relative;
+  height: 640px;
+  width: 100%;
+}
+.meetings_header {
+  margin: 0px 480px 0px 320px;
+}
+.meetings_header a {
+  background-color: #fad35d;
+}
+.meetings__firstperson {
+  background-color: #e3e4e8;
+  box-sizing: border-box;
+  font-family: 'HelveticaNeue', sans-serif;
+  text-decoration: none;
+  color: #483435;
+  padding: 110px 50px;
+}
+.meetings__firstperson div {
+  display: table;
+  width: 200px;
+  height: 420px;
+}
+.meetings__firstperson div p {
+  display: table-cell;
+  vertical-align: bottom;
+  line-height: 1.2em;
+}
+.meetings__firstperson div p em {
+  display: block;
+  width: 100%;
+  color: #bfb9b9;
+  font-size: 18px;
+  padding-bottom: 18px;
+  overflow: visible;
+}
+.meetings__firstperson div p strong {
+  display: block;
+  color: #483435;
+  width: 100%;
+  font-family: 'heliosthincregular';
+  font-size: 60px;
+  line-height: 0.9em;
+  padding-bottom: 18px;
+}
+.meetings__secondperson__teaser {
+  display: block;
+  box-sizing: border-box;
+  width: 320px;
+  height: 320px;
+  float: right;
+  background-image: url('/images/meetings/whitebg.png');
+  padding: 30px;
+  font-family: 'HelveticaNeue', sans-serif;
+  line-height: 1.2em;
+  text-decoration: none;
+  color: #483435;
+}
+.meetings__secondperson__teaser strong {
+  display: block;
+  font-family: 'heliosthincregular';
+  font-size: 60px;
+  line-height: 0.9em;
+  padding-bottom: 15px;
+}
+.meetings__secondperson__next {
+  display: block;
+  width: 320px;
+  height: 320px;
+  float: right;
+}
+/* Events - те же яйца, вид сбоку */
+.events {
+  display: block;
+  position: relative;
+  height: 640px;
+  width: 100%;
+}
+.events_header {
+  margin: 0px 320px 0px 480px;
+}
+.events_header a {
+  background-color: #8fccd0;
+}
+.events__firstgig {
+  background-color: #e3e4e8;
+  position: relative;
+  box-sizing: border-box;
+  font-family: 'HelveticaNeue', sans-serif;
+  text-decoration: none;
+  color: white;
+  padding: 110px 50px;
+}
+.events__firstgig div {
+  display: table;
+  width: 200px;
+  height: 420px;
+  float: right;
+}
+.events__firstgig div p {
+  display: table-cell;
+  vertical-align: bottom;
+  line-height: 1.2em;
+}
+.events__firstgig div p strong {
+  display: block;
+  color: white;
+  width: 100%;
+  font-family: 'heliosthincregular';
+  font-size: 55px;
+  line-height: 0.9em;
+  padding-bottom: 18px;
+}
+.events__secondgig__teaser {
+  display: block;
+  box-sizing: border-box;
+  width: 320px;
+  height: 320px;
+  float: right;
+  background-image: url('/images/events/whitebg-flip.png');
+  padding: 30px;
+  font-family: 'HelveticaNeue', sans-serif;
+  line-height: 1.2em;
+  text-decoration: none;
+  color: #483435;
+}
+.events__secondgig__teaser strong {
+  display: block;
+  font-family: 'heliosthincregular';
+  font-size: 55px;
+  line-height: 0.9em;
+  padding-bottom: 15px;
+}
+.events__secondgig__next {
+  display: block;
+  width: 320px;
+  height: 320px;
+  float: right;
+}
+/* Projects один в один meetings */
+.projects {
+  display: block;
+  position: relative;
+  height: 640px;
+  width: 100%;
+}
+.projects_header {
+  margin: 0px 480px 0px 320px;
+}
+.projects_header a {
+  background-color: #f67e79;
+}
+.projects__firstproject {
+  background: #e3e4e8 url('/images/projects/house-account.png') center center no-repeat;
+  box-sizing: border-box;
+  font-family: 'HelveticaNeue', sans-serif;
+  text-decoration: none;
+  color: #483435;
+  padding: 110px 50px;
+}
+.projects__firstproject div {
+  display: table;
+  width: 200px;
+  height: 420px;
+}
+.projects__firstproject div p {
+  display: table-cell;
+  vertical-align: bottom;
+  line-height: 1.2em;
+}
+.projects__firstproject div p em {
+  display: block;
+  width: 100%;
+  color: #bfb9b9;
+  font-size: 18px;
+  padding-bottom: 18px;
+  overflow: visible;
+}
+.projects__firstproject div p strong {
+  display: block;
+  color: #483435;
+  width: 100%;
+  font-family: 'heliosthincregular';
+  font-size: 60px;
+  line-height: 0.9em;
+  padding-bottom: 18px;
+}
+.projects__secondproject__teaser {
+  display: block;
+  box-sizing: border-box;
+  width: 320px;
+  height: 320px;
+  float: right;
+  background-image: url('/images/meetings/whitebg.png');
+  padding: 30px;
+  font-family: 'HelveticaNeue', sans-serif;
+  line-height: 1.2em;
+  text-decoration: none;
+  color: #483435;
+}
+.projects__secondproject__teaser strong {
+  display: block;
+  font-family: 'heliosthincregular';
+  font-size: 60px;
+  line-height: 0.9em;
+  padding-bottom: 15px;
+}
+.projects__secondproject__next {
+  display: block;
+  width: 320px;
+  height: 320px;
+  float: right;
+}
+/* Теперь меняем всё под разные разрешения */
+@media screen and (max-width: 1419px) {
+  /* Большие хедеры уезжают в центр */
+  .meetings_header,
+  .events_header,
+  .projects_header {
+    margin: 0px 320px 0px 0px;
+  }
+}
+@media screen and (max-width: 959px) {
+  /* Врапперы ставим по центру и автоматом задаём высоту */
+  .about,
+  .meetings,
+  .events,
+  .projects {
+    width: 640px;
+    height: auto;
+    margin: 0px auto;
+  }
+  .bigblock_left,
+  .bigblock_right {
+    width: 640px;
+    height: 640px;
+    margin: 0px;
+    float: none;
+  }
+  .wrapper_2_col_right,
+  .wrapper_2_col_left {
+    display: block;
+    position: relative;
+    width: 640px;
+    float: none;
+  }
+  /* Поджимаем картинку House Account в 980 и ниже */
+  .projects__firstproject {
+    background-size: auto 320px;
+    background-position: top center;
+  }
+  /* Большие хедеры тоже по центру в фиксированный режим */
+  .bigheader {
+    width: 640px;
+    margin: 0 auto;
+  }
+}
+/* Поджимаем картинку House Account в 640 и ниже */
+.projects__firstproject {
+  background-size: auto auto;
+  background-position: top center;
+}
+@media screen and (max-width: 640px) {
+  /* Переключаемся в телефон 320 пикселей макс */
+  .about,
+  .meetings,
+  .events,
+  .projects {
+    width: 320px;
+    margin: 0px auto;
+  }
+  .bigblock_left,
+  .bigblock_right {
+    width: 320px;
+    margin-right: 0px;
+    float: none;
+  }
+  .wrapper_2_col_right,
+  .wrapper_2_col_left {
+    display: block;
+    width: 320px;
+    height: auto;
+    float: none;
+  }
+  .wrapper_1_col,
+  .wrapper_1_col_right {
+    display: table;
+    width: 320px;
+    height: 640px;
+    position: relative;
+    float: none;
+  }
+  .wrapper_1_col_right {
+    height: 640px;
+  }
+  .meetings__secondperson__next {
+    display: none;
+  }
+  .bigheader {
+    margin: 0 auto;
+    width: 320px;
+  }
+  .bigheader a {
+    min-width: 320px;
+  }
+  /* Поджимаем картинку House Account в 640 и ниже */
+  .projects__firstproject {
+    background-size: auto 320px;
+    background-position: top center;
+  }
+  /* убираем треугольничек из подложки ссылки  */
+  .meetings__secondperson__teaser,
+  .events__secondgig__teaser,
+  .projects__secondproject__teaser {
+    float: none;
+    background-image: none;
+    background-position: 0 0;
+    background: white;
+  }
+  .meetings__secondperson__next {
+    float: none;
+  }
+  .meetings__secondperson {
+    width: 320px;
+  }
+  .meetings__firstperson {
+    padding: 50px 10px;
+    width: 320px;
+  }
+  .meetings__firstperson div {
+    width: 280px;
+    height: 540px;
+  }
+}

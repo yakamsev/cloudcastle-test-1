@@ -1,0 +1,579 @@
+/* Color palette */
+@textcolor: #1e1a33;
+@blockheadercolor: #2e2e2e;
+@teamtextcolor: #483435;
+@graycolor: #e3e4e8;
+@lightbluecolor: #8fccd0;
+@yellowcolor: #fad35d;
+@redcolor: #f67e79;
+@whitecolor:white;
+
+/* базовый блок 320х320 и текст в нём, прижатый к нижнему краю */
+
+.baseblock-mixin() {
+	display: table;
+	width: 320px;
+	height: 320px;
+	padding: 40px;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+
+.baseblock_text_mixin() {
+	width: 100%;
+	font: 14px "Helvetica", sans-serif;
+	line-height: 1.2em;
+	display: table-cell;
+	vertical-align: bottom;
+	color: @textcolor;
+}
+
+.baseblock_header_mixin() {
+	font-family: helioslightcregular, sans-serif;
+	font-size: 20px;
+	text-transform: uppercase;
+	line-height: 2em;
+	display: block;
+	color: @blockheadercolor;
+	clear: both;	
+}
+
+.clearfix:after, {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+/* Wrappers (see @media for changes)*/
+
+/* Big blocks no-resize */
+
+.bigblock_left {
+	display: block;
+	margin-right:640px;
+	height: 640px;
+}
+
+.bigblock_right {
+	display: block;
+	margin-left:640px;
+	height: 640px;
+}
+
+/* Wrapper 1 column 320 px */
+
+.wrapper_1_col {
+	display: block;
+	width: 320px;
+	height: 640px;
+	float: left;
+}
+
+.wrapper_1_col_right {
+	display: block;
+	width: 320px;
+	height: 640px;
+	float: right;
+}
+
+/* Wrapper 2 columns 640 px */
+
+.wrapper_2_col_right {
+	display: block;
+	width: 640px;
+	height: 640px;
+	position: absolute;
+	right:0px;
+	top:0px;
+}
+
+.wrapper_2_col_left {
+	display: block;
+	width: 640px;
+	height: 640px;
+	position: absolute;
+	left:0px;
+	top:0px;
+}
+
+/* Bigheaders */
+
+.bigheader {
+	display: block;
+	box-sizing: border-box;
+	height: 80px;
+	a {
+		display: block;
+		box-sizing: border-box;
+		width: 100%;
+		min-width: 480px;
+		height: 80px;
+		padding-top:23px;
+		padding-right: 85px;
+		text-decoration: none;
+		font-family: 'helioslightc';
+		text-transform: uppercase;
+		font-size: 36px;
+		text-align: right;
+		color:#5c4c4c;
+		background: url('/images/icon.svg') center right 30px no-repeat;
+	}
+}
+
+
+/* About - top block about company */
+
+.about {
+	display: block;
+	position: relative;
+	height: 640px;
+	width: 100%;
+}
+
+.about__company {
+	background-color: @graycolor;
+	background: linear-gradient(#e4e5e7, #e3e4e8);
+	padding: 40px;
+	display: table;
+	text-align: center;
+	text-decoration: none;
+	height: 640px;
+	box-sizing: border-box;
+		p {
+			.baseblock_text_mixin;
+			text-align: center;
+			text-decoration: none;
+			color: @teamtextcolor;
+				strong {
+					display:block;
+					font-family: 'heliosthincregular';
+					font-size: 36px;
+					line-height: 2em;
+					clear: both;
+					text-decoration: none;
+					color: @teamtextcolor;
+				}
+		}
+}
+
+.about__development {
+	.baseblock-mixin;
+	background: @whitecolor;
+		p {
+			.baseblock_text_mixin;
+				strong {
+					.baseblock_header_mixin
+				}
+		}
+}
+
+.about__design {
+	.baseblock-mixin;
+	background-color: @lightbluecolor;
+	background-image: url('/images/design.png');
+	text-decoration: none;
+		p {
+			.baseblock_text_mixin;
+				strong {
+					.baseblock_header_mixin
+				}
+		}
+}
+
+.about__work {
+	.baseblock-mixin;
+	height: 640px;
+	background-color: @graycolor;
+	background: linear-gradient(#e4e5e7, #e3e4e8);
+		p {
+			.baseblock_text_mixin;
+				strong {
+					.baseblock_header_mixin
+				}
+		}
+}
+
+/* Meetings - big portraits with names */
+
+.meetings {
+	display: block;
+	position: relative;
+	height: 640px;
+	width: 100%;
+}
+
+.meetings_header {	
+	margin: 0px 480px 0px 320px;
+	a {
+		background-color: @yellowcolor;
+	}
+}
+
+.meetings__firstperson {
+	background-color: @graycolor;
+	box-sizing: border-box;
+	font-family: 'HelveticaNeue', sans-serif;
+	text-decoration: none;
+	color: #483435;
+	padding: 110px 50px;
+		div {
+			display: table;
+			width: 200px;
+			height: 420px;
+				p {
+					display: table-cell;
+					vertical-align: bottom;
+					line-height: 1.2em;
+					 em {
+					 	display: block;
+					 	width:100%;
+					 	color: #bfb9b9;
+					 	font-size: 18px;
+					 	padding-bottom: 18px;
+					 	overflow: visible;
+					 }
+					 strong {
+						display: block;
+						color: #483435;
+						width: 100%;
+					 	font-family: 'heliosthincregular';
+					 	font-size: 60px;
+					 	line-height: 0.9em;
+					 	padding-bottom: 18px;
+					 }
+				}
+		}
+}
+
+.meetings__secondperson {
+}
+
+
+.meetings__secondperson__teaser {
+	display: block;
+	box-sizing: border-box;
+	width: 320px;
+	height: 320px;
+	float: right;
+	background-image: url('/images/meetings/whitebg.png');
+	padding: 30px;
+	font-family: 'HelveticaNeue', sans-serif;
+	line-height: 1.2em;
+	text-decoration: none;
+	color: #483435;
+		strong {
+			display:block;
+			font-family: 'heliosthincregular';
+			font-size: 60px;
+			line-height: 0.9em;
+			padding-bottom: 15px;
+		}
+}
+
+.meetings__secondperson__next {
+	display: block;
+	width: 320px;
+	height: 320px;
+	float: right;
+}
+
+/* Events - те же яйца, вид сбоку */
+
+.events {
+	display: block;
+	position: relative;
+	height: 640px;
+	width: 100%;
+}
+
+.events_header {	
+	margin: 0px 320px 0px 480px;
+	a {
+		background-color: @lightbluecolor;
+	}
+}
+
+.events__firstgig {
+	background-color: @graycolor;
+	position: relative;
+	box-sizing: border-box;
+	font-family: 'HelveticaNeue', sans-serif;
+	text-decoration: none;
+	color: @whitecolor;
+	padding: 110px 50px;
+		div {
+			display: table;
+			width: 200px;
+			height: 420px;
+			float:right;
+				p {
+					display: table-cell;
+					vertical-align: bottom;
+					line-height: 1.2em;
+					 strong {
+						display: block;
+						color: @whitecolor;
+						width: 100%;
+					 	font-family: 'heliosthincregular';
+					 	font-size: 55px;
+					 	line-height: 0.9em;
+					 	padding-bottom: 18px;
+					 }
+				}
+		}
+}
+
+.events__secondgig {
+}
+
+.events__secondgig__teaser {
+	display: block;
+	box-sizing: border-box;
+	width: 320px;
+	height: 320px;
+	float: right;
+	background-image: url('/images/events/whitebg-flip.png');
+	padding: 30px;
+	font-family: 'HelveticaNeue', sans-serif;
+	line-height: 1.2em;
+	text-decoration: none;
+	color: #483435;
+		strong {
+			display:block;
+			font-family: 'heliosthincregular';
+			font-size: 55px;
+			line-height: 0.9em;
+			padding-bottom: 15px;
+		}
+}
+
+.events__secondgig__next {
+	display: block;
+	width: 320px;
+	height: 320px;
+	float: right;
+}
+
+/* Projects один в один meetings */
+
+.projects {
+	display: block;
+	position: relative;
+	height: 640px;
+	width: 100%;
+}
+
+.projects_header {	
+	margin: 0px 480px 0px 320px;
+	a {
+		background-color: @redcolor;
+	}
+}
+
+.projects__firstproject {
+	background: @graycolor url('/images/projects/house-account.png') center center no-repeat;
+	box-sizing: border-box;
+	font-family: 'HelveticaNeue', sans-serif;
+	text-decoration: none;
+	color: #483435;
+	padding: 110px 50px;
+		div {
+			display: table;
+			width: 200px;
+			height: 420px;
+				p {
+					display: table-cell;
+					vertical-align: bottom;
+					line-height: 1.2em;
+					 em {
+					 	display: block;
+					 	width:100%;
+					 	color: #bfb9b9;
+					 	font-size: 18px;
+					 	padding-bottom: 18px;
+					 	overflow: visible;
+					 }
+					 strong {
+						display: block;
+						color: #483435;
+						width: 100%;
+					 	font-family: 'heliosthincregular';
+					 	font-size: 60px;
+					 	line-height: 0.9em;
+					 	padding-bottom: 18px;
+					 }
+				}
+		}
+}
+
+.projects__secondproject {
+}
+
+.projects__secondproject__teaser {
+	display: block;
+	box-sizing: border-box;
+	width: 320px;
+	height: 320px;
+	float: right;
+	background-image: url('/images/meetings/whitebg.png');
+	padding: 30px;
+	font-family: 'HelveticaNeue', sans-serif;
+	line-height: 1.2em;
+	text-decoration: none;
+	color: #483435;
+		strong {
+			display:block;
+			font-family: 'heliosthincregular';
+			font-size: 60px;
+			line-height: 0.9em;
+			padding-bottom: 15px;
+		}
+}
+
+.projects__secondproject__next {
+	display: block;
+	width: 320px;
+	height: 320px;
+	float: right;
+}
+
+/* Теперь меняем всё под разные разрешения */
+
+@media screen and (max-width: 1419px) {
+
+/* Большие хедеры уезжают в центр */
+
+	.meetings_header, .events_header, .projects_header {
+		margin: 0px 320px 0px 0px;
+	}
+} 
+
+@media screen and (max-width: 959px) {
+
+/* Врапперы ставим по центру и автоматом задаём высоту */
+
+	.about, .meetings, .events, .projects {
+		width:640px;
+		height:auto;
+		margin:0px auto;
+	}
+
+	.bigblock_left, .bigblock_right {
+		width: 640px;
+		height:640px;
+		margin:0px;
+		float:none;
+	}
+
+	.wrapper_2_col_right, .wrapper_2_col_left {
+		display: block;
+		position: relative;
+		width: 640px;
+		float:none;
+	}
+
+/* Поджимаем картинку House Account в 980 и ниже */
+
+	.projects__firstproject {
+		background-size: auto 320px;
+		background-position: top center;
+	}
+
+/* Большие хедеры тоже по центру в фиксированный режим */
+
+	.bigheader {
+		width: 640px;
+		margin: 0 auto;
+	}
+
+}
+
+/* Поджимаем картинку House Account в 640 и ниже */
+
+	.projects__firstproject {
+		background-size: auto auto;
+		background-position: top center;
+	}
+
+@media screen and (max-width: 640px) {
+	
+/* Переключаемся в телефон 320 пикселей макс */
+
+	.about, .meetings, .events, .projects {
+		width:320px;
+		margin:0px auto;
+	}
+
+	.bigblock_left, .bigblock_right {
+		width: 320px;
+		margin-right:0px;
+		float:none;
+	}
+
+	.wrapper_2_col_right, .wrapper_2_col_left {
+		display: block;
+		width: 320px;
+		height: auto;
+		float:none;
+	}
+
+	.wrapper_1_col, .wrapper_1_col_right {
+		display: table;
+		width: 320px;
+		height: 640px;
+		position: relative;
+		float:none;
+	}
+
+	.wrapper_1_col_right {
+		height: 640px;
+	}
+
+	.meetings__secondperson__next {
+		display: none;
+	}
+
+	.bigheader {
+		margin: 0 auto;
+		width: 320px;
+		a {
+			min-width:320px;
+		}
+	}
+
+/* Поджимаем картинку House Account в 640 и ниже */
+
+	.projects__firstproject {
+		background-size: auto 320px;
+		background-position: top center;
+	}
+
+/* убираем треугольничек из подложки ссылки  */
+
+	.meetings__secondperson__teaser, .events__secondgig__teaser, .projects__secondproject__teaser {
+		float: none;
+		background-image: none;
+		background-position: 0 0;
+		background: @whitecolor;
+	}
+
+	.meetings__secondperson__next {
+		float:none;
+	}
+
+	.meetings__secondperson {
+		width: 320px;
+	}
+
+	.meetings__firstperson {
+		padding: 50px 10px;
+		width:320px;
+		div {
+			width: 280px;
+			height: 540px;
+		}
+	}
+
+}

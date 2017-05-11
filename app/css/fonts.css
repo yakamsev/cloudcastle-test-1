@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'heliosthincregular';
+    src: url(/fonts/heliosthinc-webfont.woff2) format('woff2'),
+         url(/fonts/heliosthinc-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'helioslightcregular';
+    src: url(/fonts/helioslightc-webfont.woff2) format('woff2'),
+         url(/fonts/helioslightc-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'helioslightc';
+    src: url(/fonts/helioslightc-webfont.woff2) format('woff2'),
+         url(/fonts/helioslightc-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
