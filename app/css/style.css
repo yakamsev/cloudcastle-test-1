@@ -430,8 +430,8 @@ body {
 /* подвал */
 .podval {
   display: block;
-  background: #f8f8f8;
-  height: 120px;
+  background: #f8f8f8 url('/images/podval.png') center center;
+  height: 204px;
   width: 100%;
 }
 /* Теперь меняем всё под разные разрешения */
