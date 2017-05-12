@@ -291,16 +291,18 @@ body {
 /* Bigheaders - общий шаблон, цвет и margin задаётся в конкретном разделе*/
 .bigheader {
   display: block;
+  position: relative;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 80px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 .bigheader a {
   display: block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  width: 100%;
-  min-width: 480px;
   height: 80px;
   padding-top: 23px;
   padding-right: 85px;
@@ -318,6 +320,8 @@ body {
   position: relative;
   height: 640px;
   width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 .about__company {
   display: block;
@@ -366,12 +370,11 @@ body {
 }
 .about__work {
   background-image: url('../images/company/work.png');
+  text-decoration: none;
 }
 /* Meetings - big portraits with names */
-.meetings_header {
-  margin: 0px 480px 0px 320px;
-}
 .meetings_header a {
+  margin: 0px 480px 0px 320px;
   background-color: #fad35d;
 }
 .meetings {
@@ -379,6 +382,8 @@ body {
   position: relative;
   height: 640px;
   width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 .meetings__firstperson {
   background-color: #d8d8d8;
@@ -396,11 +401,11 @@ body {
   position: relative;
   height: 640px;
   width: 100%;
-}
-.events_header {
-  margin: 0px 320px 0px 480px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 .events_header a {
+  margin: 0px 320px 0px 480px;
   background-color: #8fccd0;
 }
 .events__firstgig {
@@ -418,11 +423,11 @@ body {
   position: relative;
   height: 640px;
   width: 100%;
-}
-.projects_header {
-  margin: 0px 480px 0px 320px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 .projects_header a {
+  margin: 0px 480px 0px 320px;
   background-color: #f67e79;
 }
 .projects__firstproject {
@@ -439,18 +444,21 @@ body {
 .team {
   display: block;
   position: relative;
-  background: url('../images/team-big.png') center right;
   height: 160px;
-  width: 960px;
+  width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
 }
-.team a {
+.team__block {
+  display: block;
   text-decoration: none;
+  width: 960px;
+  height: 160px;
+  margin-left: 160px;
+  background: url('../images/team-big.png') left center;
 }
 .team__description {
-  background: #8fccd0;
-  height: 160px;
-  padding: 30px 35px;
+  background-color: #8fccd0;
 }
 /* Навигация */
 .navigation {
@@ -461,6 +469,10 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
+  max-width: 1440px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   height: 80px;
   background: #f8f8f8;
 }
@@ -517,20 +529,25 @@ body {
   text-decoration: none;
   color: #111111;
 }
-/* подвал */
+/* Подвал */
 .podval {
   display: block;
   background: #f8f8f8 url('../images/podval.png') center center;
   height: 204px;
   width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 /* Теперь меняем всё под разные разрешения */
 @media screen and (max-width: 1419px) {
   /* Большие хедеры уезжают в центр */
-  .meetings_header,
-  .events_header,
-  .projects_header {
+  .meetings_header a,
+  .events_header a,
+  .projects_header a {
     margin: 0px 320px 0px 0px;
+  }
+  .team__block {
+    margin-left: 0px;
   }
 }
 @media screen and (max-width: 959px) {
@@ -569,6 +586,10 @@ body {
   }
   .navigation__logotype {
     width: 80px;
+  }
+  /* Уменьшим команды */
+  .team__block {
+    width: 640px;
   }
 }
 @media screen and (max-width: 640px) {
@@ -618,6 +639,10 @@ body {
   .bigheader a {
     min-width: 320px;
   }
+  /* Уменьшим команды */
+  .team__block {
+    width: 320px;
+  }
   /* Поджимаем картинку House Account в 640 и ниже */
   .projects__firstproject {
     background-size: auto 320px;
@@ -641,6 +666,9 @@ body {
     width: 320px;
     height: 480px;
     margin: 0 auto;
+    left: none;
+    -webkit-transform: none;
+            transform: none;
   }
   menu {
     float: none;

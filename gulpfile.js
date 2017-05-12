@@ -1,9 +1,14 @@
 var gulp = require('gulp'),
-	connect = require('gulp-connect'),
-	livereload = require('gulp-refresh'),
-	prefix = require('gulp-autoprefixer'),
-	concat = require('gulp-concat'),
-	less = require('gulp-less');
+	requireDir = require('require-dir'); // Для хранения тасков в директории
+	connect = require('gulp-connect'), // Сервер прямо из папки с проектом
+	livereload = require('gulp-refresh'), // Обновление страницы в реальном времени
+	prefix = require('gulp-autoprefixer'), // Префиксы css автоматом
+	concat = require('gulp-concat'), // Объединение файлов
+	less = require('gulp-less'); // Обработка less файлов
+	del = require('del'); // Библиотека для удаления файлов
+
+requireDir('gulp-tasks');
+
 
 // sever start
 gulp.task('connect', function() {
@@ -38,12 +43,45 @@ gulp.task('html', function() {
 	.pipe(connect.reload());
 });
 
+// Обработка изображений
+gulp.task('images', function() {
+    return gulp.src('app/images/**/*') // Берем все изображения из app
+
+        .pipe(gulp.dest('dist/images')); // Выгружаем на продакшен
+});
+
 // watch everything
 gulp.task('watch', function() {
 	gulp.watch('app/less/*.less', ['less']);
 	gulp.watch('app/css/*.css', ['css']);
 	gulp.watch('app/index.html', ['html']);
 });
+
+// Чистим директорию dist (clean)
+gulp.task('clean', function() {
+    return del.sync('dist'); // Удаляем папку dist перед сборкой
+});
+
+// build project
+gulp.task('build', ['less', 'css', 'clean', 'images'], function() {
+
+    var buildCss = gulp.src([ // Переносим CSS стили в продакшен
+        'app/styles/main.css',
+        ])
+    .pipe(gulp.dest('dist/styles'))
+
+    var buildFonts = gulp.src('app/fonts/**/*') // Переносим шрифты в продакшен
+    .pipe(gulp.dest('dist/fonts'))
+
+    var buildHtml = gulp.src('app/*.html') // Переносим HTML в продакшен
+    .pipe(gulp.dest('dist'));
+
+    var buildImages = gulp.src('app/images/**/*') // Берем все изображения из app
+    .pipe(gulp.dest('dist/images')); // Выгружаем на продакшен
+
+});
+
+// deploy project
 
 // default
 gulp.task('default', ['connect', 'less', 'css', 'html', 'watch']);

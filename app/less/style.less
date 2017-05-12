@@ -218,13 +218,16 @@ body {
 
 .bigheader {
 	display: block;
+	position: relative;
 	box-sizing: border-box;
 	height: 80px;
+	width: 100%;
+	max-width: 1440px;
+	margin:0 auto;
 	a {
 		display: block;
 		box-sizing: border-box;
-		width: 100%;
-		min-width: 480px;
+//		min-width: 480px;
 		height: 80px;
 		padding-top:23px;
 		padding-right: 85px;
@@ -246,6 +249,8 @@ body {
 	position: relative;
 	height: 640px;
 	width: 100%;
+	max-width: 1440px;
+	margin:0 auto;
 }
 
 .about__company {
@@ -297,15 +302,14 @@ body {
 
 .about__work {
 	background-image: url('../images/company/work.png');
+	text-decoration: none;
 }
 
 /* Meetings - big portraits with names */
 
-.meetings_header {	
+.meetings_header a {
 	margin: 0px 480px 0px 320px;
-	a {
-		background-color: @yellowcolor;
-	}
+	background-color: @yellowcolor;
 }
 
 .meetings {
@@ -313,6 +317,8 @@ body {
 	position: relative;
 	height: 640px;
 	width: 100%;
+	max-width: 1440px;
+	margin:0 auto;
 }
 
 .meetings__firstperson {
@@ -342,13 +348,13 @@ body {
 	position: relative;
 	height: 640px;
 	width: 100%;
+	max-width: 1440px;
+	margin:0 auto;
 }
 
-.events_header {	
+.events_header a {	
 	margin: 0px 320px 0px 480px;
-	a {
-		background-color: @lightbluecolor;
-	}
+	background-color: @lightbluecolor;
 }
 
 .events__firstgig {
@@ -377,13 +383,13 @@ body {
 	position: relative;
 	height: 640px;
 	width: 100%;
+	max-width: 1440px;
+	margin:0 auto;
 }
 
-.projects_header {	
+.projects_header a {	
 	margin: 0px 480px 0px 320px;
-	a {
-		background-color: @redcolor;
-	}
+	background-color: @redcolor;
 }
 
 .projects__firstproject {
@@ -395,7 +401,6 @@ body {
 }
 
 .projects__secondproject__teaser {
-
 }
 
 .projects__secondproject__next {
@@ -410,19 +415,23 @@ body {
 .team {
 	display: block;
 	position: relative;
-	background: url('../images/team-big.png') center right;
 	height: 160px;
-	width: 960px;
+	width: 100%;
+	max-width: 1440px;
 	margin: 0 auto;
-	a {
-		text-decoration: none;
-	}
+}
+
+.team__block {
+	display: block;
+	text-decoration: none;
+	width: 960px;
+	height: 160px;
+	margin-left: 160px;
+	background: url('../images/team-big.png') left center;
 }
 
 .team__description {
-	background: @lightbluecolor;
-	height: 160px;
-	padding: 30px 35px;
+	background-color: @lightbluecolor;
 }
 
 /* Навигация */
@@ -434,6 +443,9 @@ body {
 	top:0px;
 	box-sizing: border-box;
 	width: 100%;
+	max-width: 1440px;
+	left: 50%;
+	transform: translateX(-50%);
 	height: 80px;
 	background: #f8f8f8;
 }
@@ -497,13 +509,15 @@ body {
 	}
 }
 
-/* подвал */
+/* Подвал */
 
 .podval {
 	display: block;
 	background: #f8f8f8 url('../images/podval.png') center center;
 	height: 204px;
 	width:100%;
+	max-width: 1440px;
+	margin: 0 auto;
 }
 
 /* Теперь меняем всё под разные разрешения */
@@ -512,8 +526,12 @@ body {
 
 /* Большие хедеры уезжают в центр */
 
-	.meetings_header, .events_header, .projects_header {
+	.meetings_header a, .events_header a, .projects_header a {
 		margin: 0px 320px 0px 0px;
+	}
+
+	.team__block {
+		margin-left: 0px;
 	}
 } 
 
@@ -558,10 +576,14 @@ body {
 	.navigation__logotype {
 		width:80px;
 	}
+
+/* Уменьшим команды */
+
+	.team__block {
+		width:640px;
+	}
+
 }
-
-
-
 
 @media screen and (max-width: 640px) {
 	
@@ -612,6 +634,12 @@ body {
 		}
 	}
 
+/* Уменьшим команды */
+
+	.team__block {
+		width:320px;
+	}
+
 /* Поджимаем картинку House Account в 640 и ниже */
 
 	.projects__firstproject {
@@ -634,14 +662,14 @@ body {
 		width: 320px;
 		height: 320px;
 	}
-
-
 	
 	.navigation {
 		position: static;
 		width: 320px;
 		height: 480px;
 		margin:0 auto;
+		left:none;
+		transform:none;
 	}
 
 	menu {
