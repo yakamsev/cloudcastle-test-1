@@ -48,32 +48,32 @@ table {
 }
 @font-face {
     font-family: 'heliosthincregular';
-    src: url(/fonts/heliosthinc-webfont.woff2) format('woff2'),
-         url(/fonts/heliosthinc-webfont.woff) format('woff');
+    src: url('../fonts/heliosthinc-webfont.woff2') format('woff2'),
+         url('../fonts/heliosthinc-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'helioslightcregular';
-    src: url(/fonts/helioslightc-webfont.woff2) format('woff2'),
-         url(/fonts/helioslightc-webfont.woff) format('woff');
+    src: url('../fonts/helioslightc-webfont.woff2') format('woff2'),
+         url('../fonts/helioslightc-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'helioslightc';
-    src: url(/fonts/helioslightc-webfont.woff2) format('woff2'),
-         url(/fonts/helioslightc-webfont.woff) format('woff');
+    src: url('../fonts/helioslightc-webfont.woff2') format('woff2'),
+         url('../fonts/helioslightc-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'helioscregular';
-    src: url(/fonts/heliosc-webfont.woff2) format('woff2'),
-         url(/fonts/heliosc-webfont.woff) format('woff');
+    src: url('../fonts/heliosc-webfont.woff2') format('woff2'),
+         url('../fonts/heliosc-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -125,7 +125,7 @@ body {
           box-sizing: border-box;
   width: 320px;
   height: 320px;
-  background-image: url('/images/whitebg.png');
+  background-image: url('../images/whitebg.png');
   padding: 30px;
   font-family: 'HelveticaNeue', sans-serif;
   line-height: 1.2em;
@@ -138,13 +138,13 @@ body {
           box-sizing: border-box;
   width: 320px;
   height: 320px;
-  background-image: url('/images/whitebg.png');
+  background-image: url('../images/whitebg.png');
   padding: 30px;
   font-family: 'HelveticaNeue', sans-serif;
   line-height: 1.2em;
   text-decoration: none;
   color: #483435;
-  background-image: url('/images/whitebg-flip.png');
+  background-image: url('../images/whitebg-flip.png');
 }
 .teaser__white__header {
   display: block;
@@ -163,7 +163,7 @@ body {
   vertical-align: bottom;
   line-height: 1.2em;
   padding: 40px 40px 110px 40px;
-  background: url('/images/icon-white.svg') no-repeat;
+  background: url('../images/icon-white.svg') no-repeat;
   background-position: 40px 555px;
   font-family: 'HelveticaNeue', sans-serif;
   text-decoration: none;
@@ -198,7 +198,7 @@ body {
   vertical-align: bottom;
   line-height: 1.2em;
   padding: 40px 40px 110px 40px;
-  background: url('/images/icon-white.svg') no-repeat;
+  background: url('../images/icon-white.svg') no-repeat;
   background-position: 40px 555px;
   font-family: 'HelveticaNeue', sans-serif;
   text-decoration: none;
@@ -206,7 +206,7 @@ body {
   color: white;
 }
 .bigtext__darkicon {
-  background-image: url('/images/icon.svg');
+  background-image: url('../images/icon.svg');
 }
 .baseblock__320_320 {
   display: table;
@@ -310,7 +310,7 @@ body {
   font-size: 34px;
   text-align: right;
   color: #5c4c4c;
-  background: url('/images/icon.svg') center right 30px no-repeat;
+  background: url('../images/icon.svg') center right 30px no-repeat;
 }
 /* About - top block about company */
 .about {
@@ -322,7 +322,7 @@ body {
 .about__company {
   display: block;
   background-color: ;
-  background: #d7d7d7 url('/images/company/about.png') center top;
+  background: #d7d7d7 url('../images/company/about.png') center top;
   background-size: 100%;
   background-repeat: no-repeat;
   padding: 110px 40px;
@@ -362,10 +362,10 @@ body {
 }
 .about__design {
   background-color: #8fccd0;
-  background-image: url('/images/company/design.png');
+  background-image: url('../images/company/design.png');
 }
 .about__work {
-  background-image: url('/images/company/work.png');
+  background-image: url('../images/company/work.png');
 }
 /* Meetings - big portraits with names */
 .meetings_header {
@@ -426,7 +426,7 @@ body {
   background-color: #f67e79;
 }
 .projects__firstproject {
-  background: #d8d8d8 url('/images/projects/house-account.png') center center no-repeat;
+  background: #d8d8d8 url('../images/projects/house-account.png') center center no-repeat;
   text-decoration: none;
 }
 .projects__secondproject__next {
@@ -439,7 +439,7 @@ body {
 .team {
   display: block;
   position: relative;
-  background: url('/images/team-big.png') center right;
+  background: url('../images/team-big.png') center right;
   height: 160px;
   width: 960px;
   margin: 0 auto;
@@ -469,7 +469,7 @@ body {
   float: left;
   width: 112px;
   height: 80px;
-  background: url('/images/menu/cloudcastle-logo.png') center center no-repeat;
+  background: url('../images/menu/cloudcastle-logo.png') center center no-repeat;
 }
 .navigation__smallbuttons {
   display: block;
@@ -488,13 +488,13 @@ body {
   background-repeat: no-repeat;
 }
 .navigation__small_twitter {
-  background-image: url('/images/menu/twitter.png');
+  background-image: url('../images/menu/twitter.png');
 }
 .navigation__small_facebook {
-  background-image: url('/images/menu/facebook.png');
+  background-image: url('../images/menu/facebook.png');
 }
 .navigation__small_language {
-  background-image: url('/images/menu/ru.png');
+  background-image: url('../images/menu/ru.png');
 }
 .navigation__menu {
   display: block;
@@ -520,7 +520,7 @@ body {
 /* подвал */
 .podval {
   display: block;
-  background: #f8f8f8 url('/images/podval.png') center center;
+  background: #f8f8f8 url('../images/podval.png') center center;
   height: 204px;
   width: 100%;
 }
