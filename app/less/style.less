@@ -2,24 +2,23 @@
 @textcolor: #1e1a33;
 @blockheadercolor: #2e2e2e;
 @teamtextcolor: #483435;
-@graycolor: #e3e4e8;
+@graycolor: #d8d8d8;
 @lightbluecolor: #8fccd0;
 @yellowcolor: #fad35d;
 @redcolor: #f67e79;
 @whitecolor:white;
 
-/* базовый блок 320х320 и текст в нём, прижатый к нижнему краю */
+/* фикс для верхнего меню */
 
-.baseblock-mixin() {
-	display: table;
-	width: 320px;
-	height: 320px;
-	padding: 40px;
-	box-sizing: border-box;
-	text-decoration: none;
+body {
+	padding-top:80px;
 }
 
-.baseblock_text_mixin() {
+/* Типографика */
+
+// Тексты в About
+
+.about__text {
 	width: 100%;
 	font: 14px "Helvetica", sans-serif;
 	line-height: 1.2em;
@@ -28,15 +27,132 @@
 	color: @textcolor;
 }
 
-.baseblock_header_mixin() {
+.about__text__white {
+	.about__text;
+	color: @whitecolor;
+}
+
+.about__header {
 	font-family: helioslightcregular, sans-serif;
 	font-size: 20px;
 	text-transform: uppercase;
 	line-height: 2em;
 	display: block;
 	color: @blockheadercolor;
-	clear: both;	
+	clear: both;
 }
+
+.about__header__white {
+	.about__header;
+	color: @whitecolor;
+}
+
+// Тизер на белом фоне со стрелкой
+
+.teaser__white__left {
+	display: block;
+	box-sizing: border-box;
+	width: 320px;
+	height: 320px;
+	background-image: url('/images/whitebg.png');
+	padding: 30px;
+	font-family: 'HelveticaNeue', sans-serif;
+	line-height: 1.2em;
+	text-decoration: none;
+	color: #483435;
+}
+
+.teaser__white__right {
+	.teaser__white__left;
+	background-image: url('/images/whitebg-flip.png');
+}
+
+.teaser__white__header {
+	display:block;
+	font-family: 'heliosthincregular';
+	font-size: 55px;
+	line-height: 0.9em;
+	padding-bottom: 15px;
+}
+
+// Блоки с подписями к большим картинкам - белый (прибивается к правому краю) и коричневый (прибивается к левому) сперва коричневый
+
+.bigtext {
+	display: table;
+	width: 320px;
+	height: 640px;
+}
+
+.bigtext__content {
+	display: table-cell;
+	vertical-align: bottom;
+	line-height: 1.2em;
+	padding: 40px 40px 110px 40px;
+	background: url('/images/icon-white.svg')  no-repeat;
+	background-position: 40px 555px;
+	font-family: 'HelveticaNeue', sans-serif;
+	text-decoration: none;
+	color: #483435;
+}
+
+.bigtext__header {
+	display: block;
+	width: 100%;
+	font-family: 'heliosthincregular';
+	font-size: 60px;
+	line-height: 0.9em;
+	text-decoration: none;
+	padding-bottom: 18px;
+}
+
+.bigtext__number {
+	display: block;
+	width:100%;
+	color: #bfb9b9;
+	font-size: 18px;
+	text-decoration: none;
+	padding-bottom: 18px;
+	overflow: visible;
+}
+
+.bigtext__right {
+	.bigtext;
+	float:right;
+}
+
+.bigtext__content__white {
+	.bigtext__content;
+	color: @whitecolor;
+}
+
+.bigtext__darkicon {
+	background-image: url('/images/icon.svg');
+}
+
+// Базовый блок 320х320 (с парой вариаций по высоте) и текст в нём, прижатый к нижнему краю
+
+.baseblock__320_320 {
+	display: table;
+	width: 320px;
+	height: 320px;
+	padding: 40px;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+
+.baseblock__320_160 {
+	.baseblock__320_320;
+	height: 160px;
+}
+
+.baseblock__320_640 {
+	.baseblock__320_320;
+	height: 640px;
+}
+
+/* Блок на белом фоне с описанием фотографии, варианты слева и справа */
+
+/* Клирфикс на всякий случай */
 
 .clearfix:after, {
 	content: ".";
@@ -64,7 +180,7 @@
 
 /* Wrapper 1 column 320 px */
 
-.wrapper_1_col {
+.wrapper_1_col_left {
 	display: block;
 	width: 320px;
 	height: 640px;
@@ -78,7 +194,7 @@
 	float: right;
 }
 
-/* Wrapper 2 columns 640 px */
+/* Wrapper 2 columns 640 px height */
 
 .wrapper_2_col_right {
 	display: block;
@@ -98,7 +214,7 @@
 	top:0px;
 }
 
-/* Bigheaders */
+/* Bigheaders - общий шаблон, цвет и margin задаётся в конкретном разделе*/
 
 .bigheader {
 	display: block;
@@ -115,7 +231,7 @@
 		text-decoration: none;
 		font-family: 'helioslightc';
 		text-transform: uppercase;
-		font-size: 36px;
+		font-size: 34px;
 		text-align: right;
 		color:#5c4c4c;
 		background: url('/images/icon.svg') center right 30px no-repeat;
@@ -133,76 +249,57 @@
 }
 
 .about__company {
-	background-color: @graycolor;
-	background: linear-gradient(#e4e5e7, #e3e4e8);
-	padding: 40px;
-	display: table;
+	display: block;
+	background-color: ;
+	background: #d7d7d7 url('/images/company/about.png') center top;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	padding: 110px 40px;
 	text-align: center;
 	text-decoration: none;
 	height: 640px;
 	box-sizing: border-box;
+	div {
+		display: table;
+		box-sizing: border-box;
+		height: 420px;
 		p {
-			.baseblock_text_mixin;
+			
 			text-align: center;
 			text-decoration: none;
 			color: @teamtextcolor;
 				strong {
 					display:block;
 					font-family: 'heliosthincregular';
-					font-size: 36px;
-					line-height: 2em;
+					font-size: 37px;
+					line-height: 1.2em;
 					clear: both;
 					text-decoration: none;
 					color: @teamtextcolor;
+					padding-bottom: 30px;
+				}
+				img {
+					width:100%;
+					margin-bottom: 10%;
 				}
 		}
+	}
 }
 
 .about__development {
-	.baseblock-mixin;
 	background: @whitecolor;
-		p {
-			.baseblock_text_mixin;
-				strong {
-					.baseblock_header_mixin
-				}
-		}
 }
 
 .about__design {
-	.baseblock-mixin;
 	background-color: @lightbluecolor;
-	background-image: url('/images/design.png');
-	text-decoration: none;
-		p {
-			.baseblock_text_mixin;
-				strong {
-					.baseblock_header_mixin
-				}
-		}
+	background-image: url('/images/company/design.png');
 }
 
 .about__work {
-	.baseblock-mixin;
-	height: 640px;
-	background-color: @graycolor;
-	background: linear-gradient(#e4e5e7, #e3e4e8);
-		p {
-			.baseblock_text_mixin;
-				strong {
-					.baseblock_header_mixin
-				}
-		}
+	background-image: url('/images/company/work.png');
 }
 
 /* Meetings - big portraits with names */
-
-.meetings {
-	display: block;
-	position: relative;
-	height: 640px;
-	width: 100%;
-}
 
 .meetings_header {	
 	margin: 0px 480px 0px 320px;
@@ -211,40 +308,16 @@
 	}
 }
 
+.meetings {
+	display: block;
+	position: relative;
+	height: 640px;
+	width: 100%;
+}
+
 .meetings__firstperson {
 	background-color: @graycolor;
-	box-sizing: border-box;
-	font-family: 'HelveticaNeue', sans-serif;
 	text-decoration: none;
-	color: #483435;
-	padding: 110px 50px;
-		div {
-			display: table;
-			width: 200px;
-			height: 420px;
-				p {
-					display: table-cell;
-					vertical-align: bottom;
-					line-height: 1.2em;
-					 em {
-					 	display: block;
-					 	width:100%;
-					 	color: #bfb9b9;
-					 	font-size: 18px;
-					 	padding-bottom: 18px;
-					 	overflow: visible;
-					 }
-					 strong {
-						display: block;
-						color: #483435;
-						width: 100%;
-					 	font-family: 'heliosthincregular';
-					 	font-size: 60px;
-					 	line-height: 0.9em;
-					 	padding-bottom: 18px;
-					 }
-				}
-		}
 }
 
 .meetings__secondperson {
@@ -252,24 +325,7 @@
 
 
 .meetings__secondperson__teaser {
-	display: block;
-	box-sizing: border-box;
-	width: 320px;
-	height: 320px;
-	float: right;
-	background-image: url('/images/meetings/whitebg.png');
-	padding: 30px;
-	font-family: 'HelveticaNeue', sans-serif;
-	line-height: 1.2em;
-	text-decoration: none;
-	color: #483435;
-		strong {
-			display:block;
-			font-family: 'heliosthincregular';
-			font-size: 60px;
-			line-height: 0.9em;
-			padding-bottom: 15px;
-		}
+
 }
 
 .meetings__secondperson__next {
@@ -297,56 +353,14 @@
 
 .events__firstgig {
 	background-color: @graycolor;
-	position: relative;
-	box-sizing: border-box;
-	font-family: 'HelveticaNeue', sans-serif;
-	text-decoration: none;
-	color: @whitecolor;
-	padding: 110px 50px;
-		div {
-			display: table;
-			width: 200px;
-			height: 420px;
-			float:right;
-				p {
-					display: table-cell;
-					vertical-align: bottom;
-					line-height: 1.2em;
-					 strong {
-						display: block;
-						color: @whitecolor;
-						width: 100%;
-					 	font-family: 'heliosthincregular';
-					 	font-size: 55px;
-					 	line-height: 0.9em;
-					 	padding-bottom: 18px;
-					 }
-				}
-		}
+
 }
 
 .events__secondgig {
 }
 
 .events__secondgig__teaser {
-	display: block;
-	box-sizing: border-box;
-	width: 320px;
-	height: 320px;
-	float: right;
-	background-image: url('/images/events/whitebg-flip.png');
-	padding: 30px;
-	font-family: 'HelveticaNeue', sans-serif;
-	line-height: 1.2em;
-	text-decoration: none;
-	color: #483435;
-		strong {
-			display:block;
-			font-family: 'heliosthincregular';
-			font-size: 55px;
-			line-height: 0.9em;
-			padding-bottom: 15px;
-		}
+
 }
 
 .events__secondgig__next {
@@ -374,62 +388,14 @@
 
 .projects__firstproject {
 	background: @graycolor url('/images/projects/house-account.png') center center no-repeat;
-	box-sizing: border-box;
-	font-family: 'HelveticaNeue', sans-serif;
 	text-decoration: none;
-	color: #483435;
-	padding: 110px 50px;
-		div {
-			display: table;
-			width: 200px;
-			height: 420px;
-				p {
-					display: table-cell;
-					vertical-align: bottom;
-					line-height: 1.2em;
-					 em {
-					 	display: block;
-					 	width:100%;
-					 	color: #bfb9b9;
-					 	font-size: 18px;
-					 	padding-bottom: 18px;
-					 	overflow: visible;
-					 }
-					 strong {
-						display: block;
-						color: #483435;
-						width: 100%;
-					 	font-family: 'heliosthincregular';
-					 	font-size: 60px;
-					 	line-height: 0.9em;
-					 	padding-bottom: 18px;
-					 }
-				}
-		}
 }
 
 .projects__secondproject {
 }
 
 .projects__secondproject__teaser {
-	display: block;
-	box-sizing: border-box;
-	width: 320px;
-	height: 320px;
-	float: right;
-	background-image: url('/images/meetings/whitebg.png');
-	padding: 30px;
-	font-family: 'HelveticaNeue', sans-serif;
-	line-height: 1.2em;
-	text-decoration: none;
-	color: #483435;
-		strong {
-			display:block;
-			font-family: 'heliosthincregular';
-			font-size: 60px;
-			line-height: 0.9em;
-			padding-bottom: 15px;
-		}
+
 }
 
 .projects__secondproject__next {
@@ -437,6 +403,107 @@
 	width: 320px;
 	height: 320px;
 	float: right;
+}
+
+/* Верхняя бирюзовая херня про команду */
+
+.team {
+	display: block;
+	position: relative;
+	background: url('/images/team-big.png') center right;
+	height: 160px;
+	width: 960px;
+	margin: 0 auto;
+	a {
+		text-decoration: none;
+	}
+}
+
+.team__description {
+	background: @lightbluecolor;
+	height: 160px;
+	padding: 30px 35px;
+}
+
+/* Навигация */
+
+.navigation {
+	z-index: 999;
+	display: block;
+	position: fixed;
+	top:0px;
+	box-sizing: border-box;
+	width: 100%;
+	height: 80px;
+	background: #f8f8f8;
+}
+
+.navigation__logotype {
+	display: block;
+	float:left;
+	width: 112px;
+	height:80px;
+	background: url('/images/menu/cloudcastle-logo.png') center center no-repeat;
+}
+
+.navigation__smallbuttons {
+	display:block;
+	height: 80px;
+	width:218px;
+	float: right;
+	li {
+		display: inline-block;
+	}
+}
+
+.navigation__small { //миксин для мелких блоков в навигации
+	display: block;
+	width: 50px;
+	height: 80px;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.navigation__small_twitter {
+	background-image: url('/images/menu/twitter.png');
+}
+
+.navigation__small_facebook {
+	background-image: url('/images/menu/facebook.png');
+}
+
+.navigation__small_language {
+	background-image: url('/images/menu/ru.png');
+}
+
+.navigation__menu {
+	display: block;
+	height: 80px;
+	width:auto;
+	float:right;
+	li {
+		display: inline-block;
+		a {
+			display: block;
+			box-sizing: border-box;
+			height: 80px;
+			text-transform: uppercase;
+			padding: 36px 25px;
+			font-family: 'helioscregular';
+			font-size: 12px;
+			text-decoration: none;
+			color: #111111;
+		}
+	}
+}
+
+/* подвал */
+
+.podval {
+	display: block;
+	background: #f8f8f8;
+	height: 120px;
+	width:100%;
 }
 
 /* Теперь меняем всё под разные разрешения */
@@ -454,7 +521,7 @@
 
 /* Врапперы ставим по центру и автоматом задаём высоту */
 
-	.about, .meetings, .events, .projects {
+	.about, .meetings, .events, .projects, .team {
 		width:640px;
 		height:auto;
 		margin:0px auto;
@@ -474,12 +541,6 @@
 		float:none;
 	}
 
-/* Поджимаем картинку House Account в 980 и ниже */
-
-	.projects__firstproject {
-		background-size: auto 320px;
-		background-position: top center;
-	}
 
 /* Большие хедеры тоже по центру в фиксированный режим */
 
@@ -488,20 +549,28 @@
 		margin: 0 auto;
 	}
 
+/* Убираем сверху ссылки на соцсети */
+
+	.navigation__smallbuttons {
+		display:none;
+	}
+
+	.navigation__logotype {
+		width:80px;
+	}
 }
 
-/* Поджимаем картинку House Account в 640 и ниже */
 
-	.projects__firstproject {
-		background-size: auto auto;
-		background-position: top center;
-	}
+
 
 @media screen and (max-width: 640px) {
 	
 /* Переключаемся в телефон 320 пикселей макс */
 
-	.about, .meetings, .events, .projects {
+	body {
+		padding:0px;
+	}
+	.about, .meetings, .events, .projects, .team {
 		width:320px;
 		margin:0px auto;
 	}
@@ -519,7 +588,7 @@
 		float:none;
 	}
 
-	.wrapper_1_col, .wrapper_1_col_right {
+	.wrapper_1_col_left, .wrapper_1_col_right {
 		display: table;
 		width: 320px;
 		height: 640px;
@@ -552,11 +621,9 @@
 
 /* убираем треугольничек из подложки ссылки  */
 
-	.meetings__secondperson__teaser, .events__secondgig__teaser, .projects__secondproject__teaser {
+	.teaser__white__left, .teaser__white__right {
 		float: none;
-		background-image: none;
-		background-position: 0 0;
-		background: @whitecolor;
+		background: none;
 	}
 
 	.meetings__secondperson__next {
@@ -565,15 +632,32 @@
 
 	.meetings__secondperson {
 		width: 320px;
+		height: 320px;
 	}
 
-	.meetings__firstperson {
-		padding: 50px 10px;
-		width:320px;
-		div {
-			width: 280px;
-			height: 540px;
+
+	
+	.navigation {
+		position: static;
+		width: 320px;
+		height: 480px;
+		margin:0 auto;
+	}
+
+	menu {
+		float:none;
+		display: block;
+		position: static;
+		li {
+			display: block;
+			position: static;
+			a {
+				position: static;
+				display: block;
+				width:320px;
+				height:80px;
+			}
+		
 		}
 	}
-
 }

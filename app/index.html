@@ -7,55 +7,79 @@
 </head>
 <body>
 
-<div class="about clearfix">
-	<a href="" class="about__company bigblock_left adaptive">
-		<p><strong>Awesome Design. Great Code. Crazy Team.</strong> We have the experience, team and process to bring ideas from concept to launch and beyond. Since our founding in 2009, we've launched over 25 new products.</p>
+<div class="navigation">
+	<div class="navigation__logotype"></div>
+	<ul class="navigation__smallbuttons">
+		<li><a href="" class="navigation__small navigation__small_twitter"></a></li>
+		<li><a href="" class="navigation__small navigation__small_facebook"></a></li>
+		<li><a href="" class="navigation__small navigation__small_language"></a></li>
+	</ul>
+	<menu class="navigation__menu">
+		<li><a href="#about">About</a></li>
+		<li><a href="#meetings">Meetings</a></li>
+		<li><a href="#events">Events</a></li>
+		<li><a href="#projects">Projects</a></li>
+		<li><a href="#contact">Contact Us</a></li>
+	</menu>
+</div>
+
+<div class="team">
+	<a href="" ><div class="team__description  baseblock__320_160"><p class="about__text__white"><strong class="about__header__white">Team</strong>A team comprises a group of people or animals linked in a common purpose.</p></div></a>
+</div>
+
+<div class="about" id="about">
+	<a href="" class="about__company bigblock_left">
+	<div>
+		<p class="about__text"><strong class="about_header">Awesome Design. Great Code. Crazy Team.</strong> We have the experience, team and process to bring ideas from concept to launch and beyond. Since our founding in 2009, we've launched over 25 new products.</p>
+	</div>
 	</a>
 	<div class="wrapper_2_col_right clearfix">
-		<div class="wrapper_1_col">
-			<a href="" class="about__development">
-				<p><strong>Development</strong> Check out the timeline and be happy, dude.</p>
+		<div class="wrapper_1_col_left">
+			<a href="" class="about__development baseblock__320_320">
+				<p class="about__text"><strong class="about__header">Development</strong> Check out the timeline and be happy, dude.</p>
 			</a>
-			<a href="" class="about__design">
-				<p><strong>Design</strong> Check out the timeline and be happy, dude.</p>
+			<a href="" class="about__design baseblock__320_320">
+				<p class="about__text"><strong class="about__header">Design</strong> Check out the timeline and be happy, dude.</p>
 			</a>
 		</div>
-		<a href="" class="about__work wrapper_1_col">
-			<p><strong>Work</strong> Check out the timeline and be happy, dude.</p>
+		<a href="" class="about__work wrapper_1_col_left">
+			<div class="baseblock__320_640">
+			<p class="about__text"><strong class="about__header">Work</strong> Check out the timeline and be happy, dude.</p>
+			</div>
 		</a>
 	</div>
 </div>
 
-<h2 class="meetings_header bigheader clearfix"><a href="/asdf/">Meetings</a></h2>
- <div class="meetings clearfix">
-	<div href="" alt="Tanya" class="meetings__secondperson wrapper_2_col_left" style="background: url('images/meetings/tanya.png') top left no-repeat;">
+<h2 class="meetings_header bigheader" id="meetings"><a href="/asdf/">Meetings</a></h2>
+ <div class="meetings">
+	<div href="" class="meetings__secondperson wrapper_2_col_left" style="background: url('images/meetings/tanya.png') top left no-repeat;">
 		<div class="wrapper_1_col_right">
-			<a href="" class="meetings__secondperson__teaser">
-				<strong>Tanya<br />Simakova</strong>
+			<a href="" class="meetings__secondperson__teaser teaser__white__left">
+				<strong class="teaser__white__header">Tanya<br />Simakova</strong>
 				Imagine if the new iPhone 5S was released a long time ago in a galaxy far far away...
 			</a>
 			<a href="" class="meetings__secondperson__next" style="background-image: url(images/meetings/something-third.png);"> </a>
 		</div>
 	</div>
 	<a href="" class="meetings__firstperson bigblock_right" style="background: url(images/meetings/dasha-birjukova.png) center center;">
-		<div>
-			<p><em>#11</em> <strong>Daria<br />Biryukova</strong> Imagine if the new iPhone 5S was released a long time ago in a galaxy far far away...</p>
+		<div class="bigtext">
+			<p class="bigtext__content"><em class="bigtext__number">#11</em> <strong class="bigtext__header">Daria<br />Biryukova</strong> Imagine if the new iPhone 5S was released a long time ago in a galaxy far far away...</p>
 		</div>
 	</a>
 </div>
 
-<h2 class="events_header bigheader clearfix"><a href="/asdf/">Events</a></h2>
+<h2 class="events_header bigheader" id="events"><a href="/asdf/">Events</a></h2>
 
- <div class="events clearfix">
+ <div class="events">
 	<a href="" class="events__firstgig bigblock_left" style="background: url(images/events/jetbrains-meeting.png) right center;">
-		<div>
-			<p><strong>JetBrains<br />two-days <br />festival</strong> Imagine if the new iPhone 5S was released a long time ago in a galaxy far far away...</p>
+		<div class="bigtext__right">
+			<p class="bigtext__content__white"><strong class="bigtext__header">JetBrains<br />two-days <br />festival</strong> Imagine if the new iPhone 5S was released a long time ago in a galaxy far far away...</p>
 		</div>
 	</a>
-	<div href="" alt="Tanya" class="events__secondgig wrapper_2_col_right" style="background: url('images/events/jetbrains-conference.png') top right no-repeat;">
-		<div class="wrapper_1_col">
-			<a href="" class="events__secondgig__teaser">
-				<strong>JetBrains<br />conference</strong>
+	<div href="" class="events__secondgig wrapper_2_col_right" style="background: url('images/events/jetbrains-conference.png') top right no-repeat;">
+		<div class="wrapper_1_col_left">
+			<a href="" class="events__secondgig__teaser teaser__white__right">
+				<strong class="teaser__white__header">JetBrains<br />conference</strong>
 				Imagine if the new iPhone 5S was released a long time ago in a galaxy far far away...
 			</a>
 			<a href="" class="events__secondgig__next" style="background-image: url(images/events/404fest.png);"> </a>
@@ -63,21 +87,21 @@
 	</div>
 </div>
 
-<h2 class="projects_header bigheader clearfix"><a href="/asdf/">Projects</a></h2>
+<h2 class="projects_header bigheader" id="projects"><a href="/asdf/">Projects</a></h2>
 
-<div class="projects clearfix">
+<div class="projects">
 	<div href="" class="projects__secondproject wrapper_2_col_left" style="background: url('images/projects/basiliq.png') top left no-repeat;">
 		<div class="wrapper_1_col_right">
-			<a href="" class="projects__secondproject__teaser">
-				<strong>Basiliq<br />interface</strong>
+			<a href="" class="projects__secondproject__teaser teaser__white__left">
+				<strong class="teaser__white__header">Basiliq<br />interface</strong>
 				Imagine if the new iPhone 5S was released a long time ago in a galaxy far far away...
 			</a>
 			<a href="" class="projects__secondproject__next" style="background-image: url(images/projects/some-interface.png);"> </a>
 		</div>
 	</div>
 	<a href="" class="projects__firstproject bigblock_right" >
-		<div>
-			<p><strong>House<br />Account</strong> Imagine if the new iPhone 5S was released a long time ago in a galaxy far far away...</p>
+		<div class="bigtext">
+			<p class="bigtext__content bigtext__darkicon"><strong class="bigtext__header"strong>House<br />Account</strong> Imagine if the new iPhone 5S was released a long time ago in a galaxy far far away...</p>
 		</div>
 	</a>
 </div>
