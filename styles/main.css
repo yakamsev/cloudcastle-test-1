@@ -1,0 +1,688 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+@font-face {
+    font-family: 'heliosthincregular';
+    src: url('../fonts/heliosthinc-webfont.woff2') format('woff2'),
+         url('../fonts/heliosthinc-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'helioslightcregular';
+    src: url('../fonts/helioslightc-webfont.woff2') format('woff2'),
+         url('../fonts/helioslightc-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'helioslightc';
+    src: url('../fonts/helioslightc-webfont.woff2') format('woff2'),
+         url('../fonts/helioslightc-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'helioscregular';
+    src: url('../fonts/heliosc-webfont.woff2') format('woff2'),
+         url('../fonts/heliosc-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* Color palette */
+/* фикс для верхнего меню */
+body {
+  padding-top: 80px;
+}
+/* Типографика */
+.about__text {
+  width: 100%;
+  font: 14px "Helvetica", sans-serif;
+  line-height: 1.2em;
+  display: table-cell;
+  vertical-align: bottom;
+  color: #1e1a33;
+}
+.about__text__white {
+  width: 100%;
+  font: 14px "Helvetica", sans-serif;
+  line-height: 1.2em;
+  display: table-cell;
+  vertical-align: bottom;
+  color: #1e1a33;
+  color: white;
+}
+.about__header {
+  font-family: helioslightcregular, sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  line-height: 2em;
+  display: block;
+  color: #2e2e2e;
+  clear: both;
+}
+.about__header__white {
+  font-family: helioslightcregular, sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  line-height: 2em;
+  display: block;
+  color: #2e2e2e;
+  clear: both;
+  color: white;
+}
+.teaser__white__left {
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 320px;
+  height: 320px;
+  background-image: url('../images/whitebg.png');
+  padding: 30px;
+  font-family: 'HelveticaNeue', sans-serif;
+  line-height: 1.2em;
+  text-decoration: none;
+  color: #483435;
+}
+.teaser__white__right {
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 320px;
+  height: 320px;
+  background-image: url('../images/whitebg.png');
+  padding: 30px;
+  font-family: 'HelveticaNeue', sans-serif;
+  line-height: 1.2em;
+  text-decoration: none;
+  color: #483435;
+  background-image: url('../images/whitebg-flip.png');
+}
+.teaser__white__header {
+  display: block;
+  font-family: 'heliosthincregular';
+  font-size: 55px;
+  line-height: 0.9em;
+  padding-bottom: 15px;
+}
+.bigtext {
+  display: table;
+  width: 320px;
+  height: 640px;
+}
+.bigtext__content {
+  display: table-cell;
+  vertical-align: bottom;
+  line-height: 1.2em;
+  padding: 40px 40px 110px 40px;
+  background: url('../images/icon-white.svg') no-repeat;
+  background-position: 40px 555px;
+  font-family: 'HelveticaNeue', sans-serif;
+  text-decoration: none;
+  color: #483435;
+}
+.bigtext__header {
+  display: block;
+  width: 100%;
+  font-family: 'heliosthincregular';
+  font-size: 60px;
+  line-height: 0.9em;
+  text-decoration: none;
+  padding-bottom: 18px;
+}
+.bigtext__number {
+  display: block;
+  width: 100%;
+  color: #bfb9b9;
+  font-size: 18px;
+  text-decoration: none;
+  padding-bottom: 18px;
+  overflow: visible;
+}
+.bigtext__right {
+  display: table;
+  width: 320px;
+  height: 640px;
+  float: right;
+}
+.bigtext__content__white {
+  display: table-cell;
+  vertical-align: bottom;
+  line-height: 1.2em;
+  padding: 40px 40px 110px 40px;
+  background: url('../images/icon-white.svg') no-repeat;
+  background-position: 40px 555px;
+  font-family: 'HelveticaNeue', sans-serif;
+  text-decoration: none;
+  color: #483435;
+  color: white;
+}
+.bigtext__darkicon {
+  background-image: url('../images/icon.svg');
+}
+.baseblock__320_320 {
+  display: table;
+  width: 320px;
+  height: 320px;
+  padding: 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+}
+.baseblock__320_160 {
+  display: table;
+  width: 320px;
+  height: 320px;
+  padding: 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  height: 160px;
+}
+.baseblock__320_640 {
+  display: table;
+  width: 320px;
+  height: 320px;
+  padding: 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  height: 640px;
+}
+/* Блок на белом фоне с описанием фотографии, варианты слева и справа */
+/* Клирфикс на всякий случай */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+/* Wrappers (see @media for changes)*/
+/* Big blocks no-resize */
+.bigblock_left {
+  display: block;
+  margin-right: 640px;
+  height: 640px;
+}
+.bigblock_right {
+  display: block;
+  margin-left: 640px;
+  height: 640px;
+}
+/* Wrapper 1 column 320 px */
+.wrapper_1_col_left {
+  display: block;
+  width: 320px;
+  height: 640px;
+  float: left;
+}
+.wrapper_1_col_right {
+  display: block;
+  width: 320px;
+  height: 640px;
+  float: right;
+}
+/* Wrapper 2 columns 640 px height */
+.wrapper_2_col_right {
+  display: block;
+  width: 640px;
+  height: 640px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+.wrapper_2_col_left {
+  display: block;
+  width: 640px;
+  height: 640px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+/* Bigheaders - общий шаблон, цвет и margin задаётся в конкретном разделе*/
+.bigheader {
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 80px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.bigheader a {
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 80px;
+  padding-top: 23px;
+  padding-right: 85px;
+  text-decoration: none;
+  font-family: 'helioslightc';
+  text-transform: uppercase;
+  font-size: 34px;
+  text-align: right;
+  color: #5c4c4c;
+  background: url('../images/icon.svg') center right 30px no-repeat;
+}
+/* About - top block about company */
+.about {
+  display: block;
+  position: relative;
+  height: 640px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.about__company {
+  display: block;
+  background-color: ;
+  background: #d7d7d7 url('../images/company/about.png') center top;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding: 110px 40px;
+  text-align: center;
+  text-decoration: none;
+  height: 640px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.about__company div {
+  display: table;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 420px;
+}
+.about__company div p {
+  text-align: center;
+  text-decoration: none;
+  color: #483435;
+}
+.about__company div p strong {
+  display: block;
+  font-family: 'heliosthincregular';
+  font-size: 37px;
+  line-height: 1.2em;
+  clear: both;
+  text-decoration: none;
+  color: #483435;
+  padding-bottom: 30px;
+}
+.about__company div p img {
+  width: 100%;
+  margin-bottom: 10%;
+}
+.about__development {
+  background: white;
+}
+.about__design {
+  background-color: #8fccd0;
+  background-image: url('../images/company/design.png');
+}
+.about__work {
+  background-image: url('../images/company/work.png');
+  text-decoration: none;
+}
+/* Meetings - big portraits with names */
+.meetings_header a {
+  margin: 0px 480px 0px 320px;
+  background-color: #fad35d;
+}
+.meetings {
+  display: block;
+  position: relative;
+  height: 640px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.meetings__firstperson {
+  background-color: #d8d8d8;
+  text-decoration: none;
+}
+.meetings__secondperson__next {
+  display: block;
+  width: 320px;
+  height: 320px;
+  float: right;
+}
+/* Events - те же яйца, вид сбоку */
+.events {
+  display: block;
+  position: relative;
+  height: 640px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.events_header a {
+  margin: 0px 320px 0px 480px;
+  background-color: #8fccd0;
+}
+.events__firstgig {
+  background-color: #d8d8d8;
+}
+.events__secondgig__next {
+  display: block;
+  width: 320px;
+  height: 320px;
+  float: right;
+}
+/* Projects один в один meetings */
+.projects {
+  display: block;
+  position: relative;
+  height: 640px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.projects_header a {
+  margin: 0px 480px 0px 320px;
+  background-color: #f67e79;
+}
+.projects__firstproject {
+  background: #d8d8d8 url('../images/projects/house-account.png') center center no-repeat;
+  text-decoration: none;
+}
+.projects__secondproject__next {
+  display: block;
+  width: 320px;
+  height: 320px;
+  float: right;
+}
+/* Верхняя бирюзовая херня про команду */
+.team {
+  display: block;
+  position: relative;
+  height: 160px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.team__block {
+  display: block;
+  text-decoration: none;
+  width: 960px;
+  height: 160px;
+  margin-left: 160px;
+  background: url('../images/team-big.png') left center;
+}
+.team__description {
+  background-color: #8fccd0;
+}
+/* Навигация */
+.navigation {
+  z-index: 999;
+  display: block;
+  position: fixed;
+  top: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  max-width: 1440px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 80px;
+  background: #f8f8f8;
+}
+.navigation__logotype {
+  display: block;
+  float: left;
+  width: 112px;
+  height: 80px;
+  background: url('../images/menu/cloudcastle-logo.png') center center no-repeat;
+}
+.navigation__smallbuttons {
+  display: block;
+  height: 80px;
+  width: 218px;
+  float: right;
+}
+.navigation__smallbuttons li {
+  display: inline-block;
+}
+.navigation__small {
+  display: block;
+  width: 50px;
+  height: 80px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.navigation__small_twitter {
+  background-image: url('../images/menu/twitter.png');
+}
+.navigation__small_facebook {
+  background-image: url('../images/menu/facebook.png');
+}
+.navigation__small_language {
+  background-image: url('../images/menu/ru.png');
+}
+.navigation__menu {
+  display: block;
+  height: 80px;
+  width: auto;
+  float: right;
+}
+.navigation__menu li {
+  display: inline-block;
+}
+.navigation__menu li a {
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 80px;
+  text-transform: uppercase;
+  padding: 36px 25px;
+  font-family: 'helioscregular';
+  font-size: 12px;
+  text-decoration: none;
+  color: #111111;
+}
+/* Подвал */
+.podval {
+  display: block;
+  background: #f8f8f8 url('../images/podval.png') center center;
+  height: 204px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+/* Теперь меняем всё под разные разрешения */
+@media screen and (max-width: 1419px) {
+  /* Большие хедеры уезжают в центр */
+  .meetings_header a,
+  .events_header a,
+  .projects_header a {
+    margin: 0px 320px 0px 0px;
+  }
+  .team__block {
+    margin-left: 0px;
+  }
+}
+@media screen and (max-width: 959px) {
+  /* Врапперы ставим по центру и автоматом задаём высоту */
+  .about,
+  .meetings,
+  .events,
+  .projects,
+  .team {
+    width: 640px;
+    height: auto;
+    margin: 0px auto;
+  }
+  .bigblock_left,
+  .bigblock_right {
+    width: 640px;
+    height: 640px;
+    margin: 0px;
+    float: none;
+  }
+  .wrapper_2_col_right,
+  .wrapper_2_col_left {
+    display: block;
+    position: relative;
+    width: 640px;
+    float: none;
+  }
+  /* Большие хедеры тоже по центру в фиксированный режим */
+  .bigheader {
+    width: 640px;
+    margin: 0 auto;
+  }
+  /* Убираем сверху ссылки на соцсети */
+  .navigation__smallbuttons {
+    display: none;
+  }
+  .navigation__logotype {
+    width: 80px;
+  }
+  /* Уменьшим команды */
+  .team__block {
+    width: 640px;
+  }
+}
+@media screen and (max-width: 640px) {
+  /* Переключаемся в телефон 320 пикселей макс */
+  body {
+    padding: 0px;
+  }
+  .about,
+  .meetings,
+  .events,
+  .projects,
+  .team {
+    width: 320px;
+    margin: 0px auto;
+  }
+  .bigblock_left,
+  .bigblock_right {
+    width: 320px;
+    margin-right: 0px;
+    float: none;
+  }
+  .wrapper_2_col_right,
+  .wrapper_2_col_left {
+    display: block;
+    width: 320px;
+    height: auto;
+    float: none;
+  }
+  .wrapper_1_col_left,
+  .wrapper_1_col_right {
+    display: table;
+    width: 320px;
+    height: 640px;
+    position: relative;
+    float: none;
+  }
+  .wrapper_1_col_right {
+    height: 640px;
+  }
+  .meetings__secondperson__next {
+    display: none;
+  }
+  .bigheader {
+    margin: 0 auto;
+    width: 320px;
+  }
+  .bigheader a {
+    min-width: 320px;
+  }
+  /* Уменьшим команды */
+  .team__block {
+    width: 320px;
+  }
+  /* Поджимаем картинку House Account в 640 и ниже */
+  .projects__firstproject {
+    background-size: auto 320px;
+    background-position: top center;
+  }
+  /* убираем треугольничек из подложки ссылки  */
+  .teaser__white__left,
+  .teaser__white__right {
+    float: none;
+    background: none;
+  }
+  .meetings__secondperson__next {
+    float: none;
+  }
+  .meetings__secondperson {
+    width: 320px;
+    height: 320px;
+  }
+  .navigation {
+    position: static;
+    width: 320px;
+    height: 480px;
+    margin: 0 auto;
+    left: none;
+    -webkit-transform: none;
+            transform: none;
+  }
+  menu {
+    float: none;
+    display: block;
+    position: static;
+  }
+  menu li {
+    display: block;
+    position: static;
+  }
+  menu li a {
+    position: static;
+    display: block;
+    width: 320px;
+    height: 80px;
+  }
+}

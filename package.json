@@ -9,6 +9,7 @@
     "gulp-connect": "^5.0.0",
     "gulp-less": "^3.3.0",
     "gulp-refresh": "^1.1.0",
+    "gulp-rsync": "0.0.7",
     "require-dir": "^0.3.1"
   }
 }

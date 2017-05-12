@@ -4,11 +4,10 @@ var gulp = require('gulp'),
 	livereload = require('gulp-refresh'), // Обновление страницы в реальном времени
 	prefix = require('gulp-autoprefixer'), // Префиксы css автоматом
 	concat = require('gulp-concat'), // Объединение файлов
-	less = require('gulp-less'); // Обработка less файлов
+	less = require('gulp-less'), // Обработка less файлов
 	del = require('del'); // Библиотека для удаления файлов
 
 requireDir('gulp-tasks');
-
 
 // sever start
 gulp.task('connect', function() {
@@ -43,13 +42,6 @@ gulp.task('html', function() {
 	.pipe(connect.reload());
 });
 
-// Обработка изображений
-gulp.task('images', function() {
-    return gulp.src('app/images/**/*') // Берем все изображения из app
-
-        .pipe(gulp.dest('dist/images')); // Выгружаем на продакшен
-});
-
 // watch everything
 gulp.task('watch', function() {
 	gulp.watch('app/less/*.less', ['less']);
@@ -63,10 +55,10 @@ gulp.task('clean', function() {
 });
 
 // build project
-gulp.task('build', ['less', 'css', 'clean', 'images'], function() {
+gulp.task('build', ['clean'], function() {
 
     var buildCss = gulp.src([ // Переносим CSS стили в продакшен
-        'app/styles/main.css',
+        'app/styles/*',
         ])
     .pipe(gulp.dest('dist/styles'))
 
@@ -80,8 +72,6 @@ gulp.task('build', ['less', 'css', 'clean', 'images'], function() {
     .pipe(gulp.dest('dist/images')); // Выгружаем на продакшен
 
 });
-
-// deploy project
 
 // default
 gulp.task('default', ['connect', 'less', 'css', 'html', 'watch']);
